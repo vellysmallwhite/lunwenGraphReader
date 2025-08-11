@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+
+# Virtual env
+.venv/
+venv/
+env/
+
+# Environment and secrets
+.env
+*.env
+
+# OS / Editor
+.DS_Store
+.vscode/
+.idea/
+
+# Logs / cache / tmp
+*.log
+logs/
+.cache/
+tmp/
+downloads/
+data/
+server.log
+
+# Local database volumes
+neo4j_data/
+qdrant_data/
+
+# Notebook checkpoints
+.ipynb_checkpoints/
+
+# Docker volumes or persistent data
+docker-volumes/
+
+
