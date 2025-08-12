@@ -42,3 +42,5 @@ qdrant_data/
 docker-volumes/
 
 
+services/genesis-frontend/.next/
+services/genesis-frontend/node_modules/

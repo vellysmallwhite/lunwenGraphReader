@@ -1,0 +1,222 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Roboto+Mono:wght@300;400;500&display=swap');
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  background-color: #0C0C1E;
+  color: #E0E0FF;
+  font-family: 'Roboto Mono', monospace;
+}
+
+body {
+  background: radial-gradient(ellipse at center, #0C0C1E 0%, #050510 100%);
+}
+
+/* 自定义滚动条 */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(12, 12, 30, 0.3);
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(45deg, #00F6FF, #FF00E5);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(45deg, #FF00E5, #39FF14);
+}
+
+/* 全息玻璃效果 */
+.holographic-glass {
+  background: rgba(12, 12, 30, 0.8);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(0, 246, 255, 0.3);
+  box-shadow: 
+    0 8px 32px rgba(0, 246, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+/* 霓虹发光效果 */
+.neon-glow {
+  box-shadow: 
+    0 0 5px currentColor,
+    0 0 10px currentColor,
+    0 0 15px currentColor,
+    0 0 20px currentColor;
+}
+
+/* 打字机效果 */
+.typewriter {
+  overflow: hidden;
+  border-right: 2px solid #00F6FF;
+  white-space: nowrap;
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret 0.75s step-end infinite;
+}
+
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: #00F6FF }
+}
+
+/* 星云背景动画 */
+.nebula-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(0, 246, 255, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255, 0, 229, 0.1) 0%, transparent 50%),
+    radial-gradient(circle at 40% 80%, rgba(57, 255, 20, 0.1) 0%, transparent 50%);
+  animation: nebula-drift 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+/* 粒子效果基础类 */
+.particle {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: #00F6FF;
+  border-radius: 50%;
+  animation: float-particle 8s linear infinite;
+}
+
+@keyframes float-particle {
+  0% { 
+    transform: translateY(100vh) scale(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% { 
+    transform: translateY(-100px) scale(1);
+    opacity: 0;
+  }
+}
+
+/* 加载动画 */
+.loading-ring {
+  display: inline-block;
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.loading-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid #00F6FF;
+  border-radius: 50%;
+  animation: loading-ring-animation 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: #00F6FF transparent transparent transparent;
+}
+
+.loading-ring div:nth-child(1) { animation-delay: -0.45s; }
+.loading-ring div:nth-child(2) { animation-delay: -0.3s; }
+.loading-ring div:nth-child(3) { animation-delay: -0.15s; }
+
+@keyframes loading-ring-animation {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* 脉冲效果 */
+.pulse-ring {
+  position: relative;
+}
+
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #00F6FF;
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse-ring-animation 2s ease-out infinite;
+}
+
+@keyframes pulse-ring-animation {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2);
+    opacity: 0;
+  }
+}
+
+/* 星环加载动画 */
+.star-rings {
+  position: relative;
+  width: 80px;
+  height: 80px;
+}
+
+.star-ring {
+  position: absolute;
+  border-radius: 50%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: transparent;
+}
+
+.star-ring:nth-child(1) {
+  width: 80px;
+  height: 80px;
+  border-top-color: #00F6FF;
+  animation: ring-rotation 2s linear infinite;
+}
+
+.star-ring:nth-child(2) {
+  width: 60px;
+  height: 60px;
+  top: 10px;
+  left: 10px;
+  border-right-color: #FF00E5;
+  animation: ring-rotation 1.5s linear infinite reverse;
+}
+
+.star-ring:nth-child(3) {
+  width: 40px;
+  height: 40px;
+  top: 20px;
+  left: 20px;
+  border-bottom-color: #39FF14;
+  animation: ring-rotation 1s linear infinite;
+}
